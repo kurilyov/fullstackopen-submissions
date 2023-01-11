@@ -6,7 +6,7 @@ const Country = ({ country }) => {
 
     useEffect(() => {
         axios
-            .get(`https://api.openweathermap.org/data/2.5/weather?lat=${country.capitalInfo.latlng[0]}&lon=${country.capitalInfo.latlng[1]}&units=metric&appid=58daffc1be8894b300193526db0e8aa0`)
+            .get(`https://api.openweathermap.org/data/2.5/weather?lat=${country.capitalInfo.latlng[0]}&lon=${country.capitalInfo.latlng[1]}&units=metric&appid=${process.env.REACT_APP_API_KEY}`)
             .then(res => {
                 setWeather({
                     temp: res.data.main.temp,
